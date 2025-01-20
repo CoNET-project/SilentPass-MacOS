@@ -12,6 +12,7 @@ class ServerBridge {
     var sendData: Data
     var tcpClient: NWConnection
     var proxyConnect: ServerConnection
+    var proxyConnectStoped: Bool = false
     //The TCP maximum package size is 64K 65536
     let MTU = 65536
     
@@ -45,16 +46,25 @@ class ServerBridge {
                 self.proxyConnect.connection.send(content: data, completion: .contentProcessed ({ error in
                     if let error = error {
                         print("ServerBridge Node \(data.count) ---> APP Error!")
-                        self.proxyConnect.connectionDidFail(error: error)
+//                        let userInfo: [String: Any] = ["当前通知类型": "网络连接失败"]
+//                        NotificationCenter.default.post(name: .didUpdateConnectionNodes, object: nil, userInfo:userInfo)
                         return self.stop(error: error)
                     }
                     print("ServerBridge send Node \(data.count) --->  APP SUCCESS!")
+                    let userInfo: [String: Any] = ["当前通知类型": "允许上网"]
+                                NotificationCenter.default.post(name: .didUpdateConnectionNodes, object: nil, userInfo:userInfo)
                 }))
             }
             
             if let error = error {
                 self.stop(error: error)
+//                let userInfo: [String: Any] = ["当前通知类型": "网络连接失败"]
+//                NotificationCenter.default.post(name: .didUpdateConnectionNodes, object: nil, userInfo:userInfo)
                 return print("ServerBridge receive Node data ERROR \(error)!")
+            }
+            
+            if isComplete {
+                return self.stop(error: nil)
             }
             
             
@@ -72,19 +82,30 @@ class ServerBridge {
                 self.tcpClient.send(content: data, completion: .contentProcessed ({ error in
                     if let error = error {
                         print("ServerBridge send APP \(data.count) --> Node Error!")
-                        return self.connectionDidFail(error: error)
+//                        let userInfo: [String: Any] = ["当前通知类型": "网络连接失败"]
+//                        NotificationCenter.default.post(name: .didUpdateConnectionNodes, object: nil, userInfo:userInfo)
+                        return self.stop(error: error)
                     }
+                    
                     print("ServerBridge send APP \(data.count) --> Node success!")
+                    let userInfo: [String: Any] = ["当前通知类型": "允许上网"]
+                                NotificationCenter.default.post(name: .didUpdateConnectionNodes, object: nil, userInfo:userInfo)
                 }))
             }
             
             if let error = error {
-                self.proxyConnect.stop(error: error)
+                self.stop(error: error)
+//                let userInfo: [String: Any] = ["当前通知类型": "网络连接失败"]
+//                NotificationCenter.default.post(name: .didUpdateConnectionNodes, object: nil, userInfo:userInfo)
                 return print("ServerBridge receive APP data ERROR \(error)!")
             }
+            if isComplete {
+                return print("ServerBridge receive APP data \(data?.count ?? 0) isComplete!")
+            }
             
-            print("ServerBridge receive APP data \(data?.count ?? 0) isComplete ")
             self.proxyConnectStartReceive ()
+            print("ServerBridge APP keep listening data \(data?.count ?? 0)")
+            
         }
     }
     
@@ -100,6 +121,8 @@ class ServerBridge {
             }
             
             print("ServerBridge firstSend --> Node Access SUCCESS!")
+            let userInfo: [String: Any] = ["当前通知类型": "允许上网"]
+                        NotificationCenter.default.post(name: .didUpdateConnectionNodes, object: nil, userInfo:userInfo)
             
         }))
     }
@@ -110,16 +133,31 @@ class ServerBridge {
     }
     
     private func connectionDidFail(error: Error) {
+//        let userInfo: [String: Any] = ["当前通知类型": "网络连接失败"]
+//        NotificationCenter.default.post(name: .didUpdateConnectionNodes, object: nil, userInfo:userInfo)
         print("ServerBridge connection did fail, error: \(error)")
         stop(error: error)
     }
     
-    private func stop(error: Error?) {
-        tcpClient.stateUpdateHandler = nil
-        tcpClient.cancel()
+    func stop(error: Error?) {
+        
+        if tcpClient.stateUpdateHandler != nil {
+            tcpClient.stateUpdateHandler = nil
+            tcpClient.cancel()
+        }
+        
+        if !proxyConnectStoped {
+            proxyConnectStoped = true
+            proxyConnect.stop(error: error)
+        }
+        
+        
+        
+        
         if let didStopCallback = didStopCallback {
             self.didStopCallback = nil
             didStopCallback(error)
+            
         }
     }
     

@@ -24,8 +24,8 @@ class JavaScriptBridge {
         completionHandler?(message.body as? String)
         
         //      釋放UUID所指向的記憶的回調函數
-        completionHandlerByUUID.removeValue(message.name)
-        configuration.userContentController.remove(<#T##contentRuleList: WKContentRuleList##WKContentRuleList#>)
+        completionHandlerByUUID.removeValue(forKey: message.name)
+        configuration.userContentController.removeScriptMessageHandler(forName: message.name)
         
     }
     /**

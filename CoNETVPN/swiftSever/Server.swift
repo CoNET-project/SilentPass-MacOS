@@ -10,8 +10,6 @@ import Network
 
 import ObjectivePGP
 
-import PromiseKit
-
 //import Web3Core
 //import web3swift
 
@@ -22,19 +20,16 @@ class Server {
     let port: NWEndpoint.Port
     let listener: NWListener
     let layerMinus: LayerMinus
+    let portNumber: UInt16
     private var connectionsByID: [Int: ServerConnection] = [:]
     
     init(port: UInt16, layerMinus: LayerMinus) {
         self.port = NWEndpoint.Port(rawValue: port)!
         listener = try! NWListener(using: .tcp, on: self.port)
         self.layerMinus = layerMinus
-        
-      
-        
+        self.portNumber = port
     }
     
-    
-
     func start() {
         print("Local Proxy Server starting on port \(self.port) ...")
         listener.stateUpdateHandler = self.stateDidChange(to:)
@@ -57,7 +52,7 @@ class Server {
     }
 
     private func didAccept(nwConnection: NWConnection) {
-        let connection = ServerConnection(nwConnection: nwConnection, _layerMinus: self.layerMinus)
+        let connection = ServerConnection(nwConnection: nwConnection, _layerMinus: self.layerMinus, port: self.portNumber)
         self.connectionsByID[connection.id] = connection
         connection.didStopCallback = { _ in
             self.connectionDidStop(connection)
@@ -75,13 +70,13 @@ class Server {
         print("server did close connection \(connection.id)")
     }
 
-    private func stop() {
+    func stop() {
         self.listener.stateUpdateHandler = nil
         self.listener.newConnectionHandler = nil
         self.listener.cancel()
         for connection in self.connectionsByID.values {
             connection.didStopCallback = nil
-            connection.stop()
+            connection.stop(error: nil)
         }
         self.connectionsByID.removeAll()
     }

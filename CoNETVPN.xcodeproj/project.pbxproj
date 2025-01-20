@@ -3,37 +3,199 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		64D0EA51EE31A6624AD56A09 /* Pods_CoNETVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 677473C4E1DBD7DE1EA9C09D /* Pods_CoNETVPN.framework */; };
+		7611095B2D19459F00B7677B /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7611095A2D19459F00B7677B /* VPNManager.swift */; };
+		7625C5942D193C19000BFB3D /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7660ED512D13ADA9008B6D28 /* NetworkExtension.framework */; };
+		7625C59C2D193C19000BFB3D /* macVPN.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7625C5932D193C19000BFB3D /* macVPN.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7625C5A62D193C28000BFB3D /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7625C5A32D193C28000BFB3D /* PacketTunnelProvider.swift */; };
+		763D16572D0CEE4F00CD6FAD /* ObjectivePGP in Frameworks */ = {isa = PBXBuildFile; productRef = 763D16562D0CEE4F00CD6FAD /* ObjectivePGP */; };
+		763D165B2D0CF2DB00CD6FAD /* web3swift in Frameworks */ = {isa = PBXBuildFile; productRef = 763D165A2D0CF2DB00CD6FAD /* web3swift */; };
+		7660EDB72D13F57D008B6D28 /* ServerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660EDB22D13F57D008B6D28 /* ServerBridge.swift */; };
+		7660EDB82D13F57D008B6D28 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660EDB12D13F57D008B6D28 /* Server.swift */; };
+		7660EDB92D13F57D008B6D28 /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660EDB32D13F57D008B6D28 /* ServerConnection.swift */; };
+		7660EDBA2D13F57D008B6D28 /* MiningProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660EDAC2D13F57D008B6D28 /* MiningProcess.swift */; };
+		7660EDBC2D13F57D008B6D28 /* ValidatorPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660EDB42D13F57D008B6D28 /* ValidatorPost.swift */; };
+		7660EDBD2D13F57D008B6D28 /* WebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660EDB52D13F57D008B6D28 /* WebViewManager.swift */; };
+		7660EDBE2D13F57D008B6D28 /* NodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660EDAE2D13F57D008B6D28 /* NodeManager.swift */; };
+		7660EDBF2D13F57D008B6D28 /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660EDAF2D13F57D008B6D28 /* CountryManager.swift */; };
+		7660EDC02D13F57D008B6D28 /* LayerMinus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660EDAD2D13F57D008B6D28 /* LayerMinus.swift */; };
+		7660EDC12D13F57D008B6D28 /* CONET_Guardian_NodeInfo_ABI.text in Resources */ = {isa = PBXBuildFile; fileRef = 7660EDAB2D13F57D008B6D28 /* CONET_Guardian_NodeInfo_ABI.text */; };
+		7660EE3B2D159DA3008B6D28 /* LoadingHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7660EE3A2D159DA3008B6D28 /* LoadingHUD.swift */; };
+		76BEC1362D19BF8E0037969A /* ObjectivePGP in Frameworks */ = {isa = PBXBuildFile; productRef = 76BEC1352D19BF8E0037969A /* ObjectivePGP */; };
+		76BEC1382D19BF930037969A /* web3swift in Frameworks */ = {isa = PBXBuildFile; productRef = 76BEC1372D19BF930037969A /* web3swift */; };
+		76E93E7E2D0AB1C9003F1119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76E93E6D2D0AB1C9003F1119 /* Assets.xcassets */; };
+		76E93E812D0AB1C9003F1119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76E93E732D0AB1C9003F1119 /* Main.storyboard */; };
+		76E93E822D0AB1C9003F1119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E93E6C2D0AB1C9003F1119 /* AppDelegate.swift */; };
+		76E93E8B2D0AB1C9003F1119 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E93E7B2D0AB1C9003F1119 /* ViewController.swift */; };
+		D06A1D172D1E40410052F4E9 /* CONET_Guardian_NodeInfo_ABI.text in Resources */ = {isa = PBXBuildFile; fileRef = D06A1D0B2D1E40410052F4E9 /* CONET_Guardian_NodeInfo_ABI.text */; };
+		D06A1D182D1E40410052F4E9 /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A1D152D1E40410052F4E9 /* VPNManager.swift */; };
+		D06A1D1A2D1E40410052F4E9 /* MiningProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A1D0C2D1E40410052F4E9 /* MiningProcess.swift */; };
+		D06A1D1B2D1E40410052F4E9 /* LayerMinus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A1D0D2D1E40410052F4E9 /* LayerMinus.swift */; };
+		D06A1D1D2D1E40410052F4E9 /* ValidatorPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A1D132D1E40410052F4E9 /* ValidatorPost.swift */; };
+		D06A1D1E2D1E40410052F4E9 /* WebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A1D142D1E40410052F4E9 /* WebViewManager.swift */; };
+		D06A1D202D1E40410052F4E9 /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A1D0F2D1E40410052F4E9 /* CountryManager.swift */; };
+		D06A1D212D1E40410052F4E9 /* NodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06A1D0E2D1E40410052F4E9 /* NodeManager.swift */; };
+		D08A05882D39503A0093DFEF /* DomainFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08A05872D39503A0093DFEF /* DomainFilter.swift */; };
+		D08C5B4E2D2D58E3001B4BBA /* NativeBridge 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C5B4D2D2D58E3001B4BBA /* NativeBridge 2.swift */; };
+		D0975CCF2D36A01B001C9A61 /* DomainFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0975CCE2D36A01B001C9A61 /* DomainFilter.swift */; };
+		D0C003D32D1F34F500B1F272 /* Socks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C003D22D1F34F000B1F272 /* Socks.swift */; };
+		D0C003D52D1F6D2500B1F272 /* Rfc1928.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C003D42D1F6CF500B1F272 /* Rfc1928.swift */; };
+		D0EA178E2D24587D00D6C9C8 /* Rfc1928 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA178D2D24587D00D6C9C8 /* Rfc1928 2.swift */; };
+		D0EA17902D24589F00D6C9C8 /* Socks 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA178F2D24589F00D6C9C8 /* Socks 2.swift */; };
+		D0EA17922D245AAB00D6C9C8 /* ServerConnection 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA17912D245AAB00D6C9C8 /* ServerConnection 2.swift */; };
+		D0EA17942D245AB300D6C9C8 /* Server 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA17932D245AB300D6C9C8 /* Server 2.swift */; };
+		D0EA17962D245AC900D6C9C8 /* ServerBridge 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EA17952D245AC900D6C9C8 /* ServerBridge 2.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7625C59A2D193C19000BFB3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76E481EC2CF231BB00D97971 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7625C5922D193C19000BFB3D;
+			remoteInfo = macVPN;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7660ED602D13ADA9008B6D28 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7625C59C2D193C19000BFB3D /* macVPN.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		32FC7BF993FB72BBD2B7AFA0 /* Pods-CoNETVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoNETVPN.release.xcconfig"; path = "Target Support Files/Pods-CoNETVPN/Pods-CoNETVPN.release.xcconfig"; sourceTree = "<group>"; };
+		42020A75BB213E250325DE55 /* Pods-CoNETVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoNETVPN.debug.xcconfig"; path = "Target Support Files/Pods-CoNETVPN/Pods-CoNETVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		677473C4E1DBD7DE1EA9C09D /* Pods_CoNETVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoNETVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7611095A2D19459F00B7677B /* VPNManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
+		7625C5932D193C19000BFB3D /* macVPN.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = macVPN.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7625C5A12D193C28000BFB3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7625C5A22D193C28000BFB3D /* macVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macVPN.entitlements; sourceTree = "<group>"; };
+		7625C5A32D193C28000BFB3D /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		7660ED512D13ADA9008B6D28 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		7660EDAB2D13F57D008B6D28 /* CONET_Guardian_NodeInfo_ABI.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONET_Guardian_NodeInfo_ABI.text; sourceTree = "<group>"; };
+		7660EDAC2D13F57D008B6D28 /* MiningProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningProcess.swift; sourceTree = "<group>"; };
+		7660EDAD2D13F57D008B6D28 /* LayerMinus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerMinus.swift; sourceTree = "<group>"; };
+		7660EDAE2D13F57D008B6D28 /* NodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeManager.swift; sourceTree = "<group>"; };
+		7660EDAF2D13F57D008B6D28 /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
+		7660EDB12D13F57D008B6D28 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		7660EDB22D13F57D008B6D28 /* ServerBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerBridge.swift; sourceTree = "<group>"; };
+		7660EDB32D13F57D008B6D28 /* ServerConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
+		7660EDB42D13F57D008B6D28 /* ValidatorPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorPost.swift; sourceTree = "<group>"; };
+		7660EDB52D13F57D008B6D28 /* WebViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewManager.swift; sourceTree = "<group>"; };
+		7660EE3A2D159DA3008B6D28 /* LoadingHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingHUD.swift; sourceTree = "<group>"; };
 		76E481F42CF231BB00D97971 /* CoNETVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoNETVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76E93E6C2D0AB1C9003F1119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		76E93E6D2D0AB1C9003F1119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		76E93E6F2D0AB1C9003F1119 /* CoNETVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoNETVPN.entitlements; sourceTree = "<group>"; };
+		76E93E702D0AB1C9003F1119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76E93E722D0AB1C9003F1119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		76E93E7B2D0AB1C9003F1119 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D06A1D0B2D1E40410052F4E9 /* CONET_Guardian_NodeInfo_ABI.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONET_Guardian_NodeInfo_ABI.text; sourceTree = "<group>"; };
+		D06A1D0C2D1E40410052F4E9 /* MiningProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningProcess.swift; sourceTree = "<group>"; };
+		D06A1D0D2D1E40410052F4E9 /* LayerMinus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerMinus.swift; sourceTree = "<group>"; };
+		D06A1D0E2D1E40410052F4E9 /* NodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeManager.swift; sourceTree = "<group>"; };
+		D06A1D0F2D1E40410052F4E9 /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
+		D06A1D132D1E40410052F4E9 /* ValidatorPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorPost.swift; sourceTree = "<group>"; };
+		D06A1D142D1E40410052F4E9 /* WebViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewManager.swift; sourceTree = "<group>"; };
+		D06A1D152D1E40410052F4E9 /* VPNManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
+		D08A05872D39503A0093DFEF /* DomainFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainFilter.swift; sourceTree = "<group>"; };
+		D08C5B4D2D2D58E3001B4BBA /* NativeBridge 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NativeBridge 2.swift"; sourceTree = "<group>"; };
+		D0975CCE2D36A01B001C9A61 /* DomainFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainFilter.swift; sourceTree = "<group>"; };
+		D0C003D22D1F34F000B1F272 /* Socks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socks.swift; sourceTree = "<group>"; };
+		D0C003D42D1F6CF500B1F272 /* Rfc1928.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rfc1928.swift; sourceTree = "<group>"; };
+		D0EA178D2D24587D00D6C9C8 /* Rfc1928 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rfc1928 2.swift"; sourceTree = "<group>"; };
+		D0EA178F2D24589F00D6C9C8 /* Socks 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Socks 2.swift"; sourceTree = "<group>"; };
+		D0EA17912D245AAB00D6C9C8 /* ServerConnection 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServerConnection 2.swift"; sourceTree = "<group>"; };
+		D0EA17932D245AB300D6C9C8 /* Server 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Server 2.swift"; sourceTree = "<group>"; };
+		D0EA17952D245AC900D6C9C8 /* ServerBridge 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServerBridge 2.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		76E481F62CF231BB00D97971 /* CoNETVPN */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = CoNETVPN;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
+		7625C5902D193C19000BFB3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76BEC1362D19BF8E0037969A /* ObjectivePGP in Frameworks */,
+				7625C5942D193C19000BFB3D /* NetworkExtension.framework in Frameworks */,
+				76BEC1382D19BF930037969A /* web3swift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		76E481F12CF231BB00D97971 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				763D16572D0CEE4F00CD6FAD /* ObjectivePGP in Frameworks */,
+				763D165B2D0CF2DB00CD6FAD /* web3swift in Frameworks */,
+				64D0EA51EE31A6624AD56A09 /* Pods_CoNETVPN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73C42941A2A62955624D91C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7660ED512D13ADA9008B6D28 /* NetworkExtension.framework */,
+				677473C4E1DBD7DE1EA9C09D /* Pods_CoNETVPN.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7625C5A42D193C28000BFB3D /* macVPN */ = {
+			isa = PBXGroup;
+			children = (
+				D06A1D162D1E40410052F4E9 /* swiftSever 4 */,
+				7625C5A12D193C28000BFB3D /* Info.plist */,
+				7625C5A22D193C28000BFB3D /* macVPN.entitlements */,
+				7625C5A32D193C28000BFB3D /* PacketTunnelProvider.swift */,
+			);
+			path = macVPN;
+			sourceTree = "<group>";
+		};
+		7660EDB62D13F57D008B6D28 /* swiftSever */ = {
+			isa = PBXGroup;
+			children = (
+				7660EDAB2D13F57D008B6D28 /* CONET_Guardian_NodeInfo_ABI.text */,
+				7660EDAC2D13F57D008B6D28 /* MiningProcess.swift */,
+				D0975CCE2D36A01B001C9A61 /* DomainFilter.swift */,
+				7660EDAD2D13F57D008B6D28 /* LayerMinus.swift */,
+				7660EDAE2D13F57D008B6D28 /* NodeManager.swift */,
+				7660EDAF2D13F57D008B6D28 /* CountryManager.swift */,
+				7660EDB12D13F57D008B6D28 /* Server.swift */,
+				7660EDB22D13F57D008B6D28 /* ServerBridge.swift */,
+				7660EDB32D13F57D008B6D28 /* ServerConnection.swift */,
+				D0C003D22D1F34F000B1F272 /* Socks.swift */,
+				D0C003D42D1F6CF500B1F272 /* Rfc1928.swift */,
+				7660EDB42D13F57D008B6D28 /* ValidatorPost.swift */,
+				7660EDB52D13F57D008B6D28 /* WebViewManager.swift */,
+				7611095A2D19459F00B7677B /* VPNManager.swift */,
+			);
+			path = swiftSever;
+			sourceTree = "<group>";
+		};
 		76E481EB2CF231BB00D97971 = {
 			isa = PBXGroup;
 			children = (
-				76E481F62CF231BB00D97971 /* CoNETVPN */,
+				76E93E7D2D0AB1C9003F1119 /* CoNETVPN */,
+				7625C5A42D193C28000BFB3D /* macVPN */,
 				76E481F52CF231BB00D97971 /* Products */,
+				926D5D4D4E2E368DE707790D /* Pods */,
+				73C42941A2A62955624D91C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,30 +203,101 @@
 			isa = PBXGroup;
 			children = (
 				76E481F42CF231BB00D97971 /* CoNETVPN.app */,
+				7625C5932D193C19000BFB3D /* macVPN.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		76E93E7D2D0AB1C9003F1119 /* CoNETVPN */ = {
+			isa = PBXGroup;
+			children = (
+				76E93E6C2D0AB1C9003F1119 /* AppDelegate.swift */,
+				76E93E6D2D0AB1C9003F1119 /* Assets.xcassets */,
+				76E93E6F2D0AB1C9003F1119 /* CoNETVPN.entitlements */,
+				76E93E702D0AB1C9003F1119 /* Info.plist */,
+				76E93E732D0AB1C9003F1119 /* Main.storyboard */,
+				76E93E7B2D0AB1C9003F1119 /* ViewController.swift */,
+				D08C5B4D2D2D58E3001B4BBA /* NativeBridge 2.swift */,
+				7660EE3A2D159DA3008B6D28 /* LoadingHUD.swift */,
+				7660EDB62D13F57D008B6D28 /* swiftSever */,
+			);
+			path = CoNETVPN;
+			sourceTree = "<group>";
+		};
+		926D5D4D4E2E368DE707790D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				42020A75BB213E250325DE55 /* Pods-CoNETVPN.debug.xcconfig */,
+				32FC7BF993FB72BBD2B7AFA0 /* Pods-CoNETVPN.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D06A1D162D1E40410052F4E9 /* swiftSever 4 */ = {
+			isa = PBXGroup;
+			children = (
+				D0EA178D2D24587D00D6C9C8 /* Rfc1928 2.swift */,
+				D0EA178F2D24589F00D6C9C8 /* Socks 2.swift */,
+				D08A05872D39503A0093DFEF /* DomainFilter.swift */,
+				D06A1D0B2D1E40410052F4E9 /* CONET_Guardian_NodeInfo_ABI.text */,
+				D06A1D0C2D1E40410052F4E9 /* MiningProcess.swift */,
+				D06A1D0D2D1E40410052F4E9 /* LayerMinus.swift */,
+				D0EA17952D245AC900D6C9C8 /* ServerBridge 2.swift */,
+				D06A1D0E2D1E40410052F4E9 /* NodeManager.swift */,
+				D06A1D0F2D1E40410052F4E9 /* CountryManager.swift */,
+				D0EA17912D245AAB00D6C9C8 /* ServerConnection 2.swift */,
+				D0EA17932D245AB300D6C9C8 /* Server 2.swift */,
+				D06A1D132D1E40410052F4E9 /* ValidatorPost.swift */,
+				D06A1D142D1E40410052F4E9 /* WebViewManager.swift */,
+				D06A1D152D1E40410052F4E9 /* VPNManager.swift */,
+			);
+			path = "swiftSever 4";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		76E481F32CF231BB00D97971 /* CoNETVPN */ = {
+		7625C5922D193C19000BFB3D /* macVPN */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 76E482032CF231BE00D97971 /* Build configuration list for PBXNativeTarget "CoNETVPN" */;
+			buildConfigurationList = 7625C59E2D193C19000BFB3D /* Build configuration list for PBXNativeTarget "macVPN" */;
 			buildPhases = (
-				76E481F02CF231BB00D97971 /* Sources */,
-				76E481F12CF231BB00D97971 /* Frameworks */,
-				76E481F22CF231BB00D97971 /* Resources */,
+				7625C58F2D193C19000BFB3D /* Sources */,
+				7625C5902D193C19000BFB3D /* Frameworks */,
+				7625C5912D193C19000BFB3D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				76E481F62CF231BB00D97971 /* CoNETVPN */,
+			name = macVPN;
+			packageProductDependencies = (
+				76BEC1352D19BF8E0037969A /* ObjectivePGP */,
+				76BEC1372D19BF930037969A /* web3swift */,
+			);
+			productName = macVPN;
+			productReference = 7625C5932D193C19000BFB3D /* macVPN.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		76E481F32CF231BB00D97971 /* CoNETVPN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76E482032CF231BE00D97971 /* Build configuration list for PBXNativeTarget "CoNETVPN" */;
+			buildPhases = (
+				C60D98B713567177033FEA36 /* [CP] Check Pods Manifest.lock */,
+				76E481F02CF231BB00D97971 /* Sources */,
+				76E481F12CF231BB00D97971 /* Frameworks */,
+				76E481F22CF231BB00D97971 /* Resources */,
+				7660ED602D13ADA9008B6D28 /* Embed Foundation Extensions */,
+				63CB2CA6BF79290CA2883CC5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7625C59B2D193C19000BFB3D /* PBXTargetDependency */,
 			);
 			name = CoNETVPN;
 			packageProductDependencies = (
+				763D16562D0CEE4F00CD6FAD /* ObjectivePGP */,
+				763D165A2D0CF2DB00CD6FAD /* web3swift */,
 			);
 			productName = CoNETVPN;
 			productReference = 76E481F42CF231BB00D97971 /* CoNETVPN.app */;
@@ -77,15 +310,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1610;
-				LastUpgradeCheck = 1610;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					7625C5922D193C19000BFB3D = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					76E481F32CF231BB00D97971 = {
 						CreatedOnToolsVersion = 16.1;
 					};
 				};
 			};
 			buildConfigurationList = 76E481EF2CF231BB00D97971 /* Build configuration list for PBXProject "CoNETVPN" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -93,38 +330,212 @@
 				Base,
 			);
 			mainGroup = 76E481EB2CF231BB00D97971;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			packageReferences = (
+				763D16552D0CEE4F00CD6FAD /* XCRemoteSwiftPackageReference "ObjectivePGP" */,
+				763D16592D0CF2DB00CD6FAD /* XCRemoteSwiftPackageReference "web3swift" */,
+			);
 			productRefGroup = 76E481F52CF231BB00D97971 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				76E481F32CF231BB00D97971 /* CoNETVPN */,
+				7625C5922D193C19000BFB3D /* macVPN */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7625C5912D193C19000BFB3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D06A1D172D1E40410052F4E9 /* CONET_Guardian_NodeInfo_ABI.text in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		76E481F22CF231BB00D97971 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7660EDC12D13F57D008B6D28 /* CONET_Guardian_NodeInfo_ABI.text in Resources */,
+				76E93E7E2D0AB1C9003F1119 /* Assets.xcassets in Resources */,
+				76E93E812D0AB1C9003F1119 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		63CB2CA6BF79290CA2883CC5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoNETVPN/Pods-CoNETVPN-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoNETVPN/Pods-CoNETVPN-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoNETVPN/Pods-CoNETVPN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C60D98B713567177033FEA36 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoNETVPN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		7625C58F2D193C19000BFB3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D06A1D182D1E40410052F4E9 /* VPNManager.swift in Sources */,
+				D08A05882D39503A0093DFEF /* DomainFilter.swift in Sources */,
+				D0EA17962D245AC900D6C9C8 /* ServerBridge 2.swift in Sources */,
+				D06A1D1A2D1E40410052F4E9 /* MiningProcess.swift in Sources */,
+				D06A1D1B2D1E40410052F4E9 /* LayerMinus.swift in Sources */,
+				D06A1D1D2D1E40410052F4E9 /* ValidatorPost.swift in Sources */,
+				D06A1D1E2D1E40410052F4E9 /* WebViewManager.swift in Sources */,
+				D0EA178E2D24587D00D6C9C8 /* Rfc1928 2.swift in Sources */,
+				D0EA17942D245AB300D6C9C8 /* Server 2.swift in Sources */,
+				D0EA17902D24589F00D6C9C8 /* Socks 2.swift in Sources */,
+				D06A1D202D1E40410052F4E9 /* CountryManager.swift in Sources */,
+				D06A1D212D1E40410052F4E9 /* NodeManager.swift in Sources */,
+				D0EA17922D245AAB00D6C9C8 /* ServerConnection 2.swift in Sources */,
+				7625C5A62D193C28000BFB3D /* PacketTunnelProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		76E481F02CF231BB00D97971 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7660EDB72D13F57D008B6D28 /* ServerBridge.swift in Sources */,
+				D0C003D52D1F6D2500B1F272 /* Rfc1928.swift in Sources */,
+				7660EDB82D13F57D008B6D28 /* Server.swift in Sources */,
+				7611095B2D19459F00B7677B /* VPNManager.swift in Sources */,
+				7660EDB92D13F57D008B6D28 /* ServerConnection.swift in Sources */,
+				D08C5B4E2D2D58E3001B4BBA /* NativeBridge 2.swift in Sources */,
+				7660EDBA2D13F57D008B6D28 /* MiningProcess.swift in Sources */,
+				7660EDBC2D13F57D008B6D28 /* ValidatorPost.swift in Sources */,
+				7660EDBD2D13F57D008B6D28 /* WebViewManager.swift in Sources */,
+				7660EE3B2D159DA3008B6D28 /* LoadingHUD.swift in Sources */,
+				7660EDBE2D13F57D008B6D28 /* NodeManager.swift in Sources */,
+				7660EDBF2D13F57D008B6D28 /* CountryManager.swift in Sources */,
+				7660EDC02D13F57D008B6D28 /* LayerMinus.swift in Sources */,
+				D0C003D32D1F34F500B1F272 /* Socks.swift in Sources */,
+				76E93E822D0AB1C9003F1119 /* AppDelegate.swift in Sources */,
+				76E93E8B2D0AB1C9003F1119 /* ViewController.swift in Sources */,
+				D0975CCF2D36A01B001C9A61 /* DomainFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7625C59B2D193C19000BFB3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7625C5922D193C19000BFB3D /* macVPN */;
+			targetProxy = 7625C59A2D193C19000BFB3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		76E93E732D0AB1C9003F1119 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76E93E722D0AB1C9003F1119 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		7625C59F2D193C19000BFB3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = macVPN/macVPN.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ALGCAMXRT2;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = macVPN/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = macVPN;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fx168.maxVPN.CoNETVPN.macVPN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7625C5A02D193C19000BFB3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = macVPN/macVPN.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ALGCAMXRT2;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = macVPN/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = macVPN;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fx168.maxVPN.CoNETVPN.macVPN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		76E482012CF231BE00D97971 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -159,10 +570,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -181,7 +594,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -222,10 +635,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -238,6 +653,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
@@ -245,16 +661,24 @@
 		};
 		76E482042CF231BE00D97971 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42020A75BB213E250325DE55 /* Pods-CoNETVPN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CoNETVPN/CoNETVPN.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.99;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ALGCAMXRT2;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "\"Standard Architectures (arm64, x86_64)\"";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoNETVPN/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CoNETVPN;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -262,9 +686,12 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 1.0.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fx168.maxVPN.CoNETVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -272,16 +699,24 @@
 		};
 		76E482052CF231BE00D97971 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32FC7BF993FB72BBD2B7AFA0 /* Pods-CoNETVPN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CoNETVPN/CoNETVPN.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.99;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ALGCAMXRT2;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				EXCLUDED_ARCHS = "\"Standard Architectures (arm64, x86_64)\"";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoNETVPN/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CoNETVPN;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -289,9 +724,12 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 1.0.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fx168.maxVPN.CoNETVPN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -300,6 +738,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7625C59E2D193C19000BFB3D /* Build configuration list for PBXNativeTarget "macVPN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7625C59F2D193C19000BFB3D /* Debug */,
+				7625C5A02D193C19000BFB3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		76E481EF2CF231BB00D97971 /* Build configuration list for PBXProject "CoNETVPN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -319,6 +766,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		763D16552D0CEE4F00CD6FAD /* XCRemoteSwiftPackageReference "ObjectivePGP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/ObjectivePGP.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		763D16592D0CF2DB00CD6FAD /* XCRemoteSwiftPackageReference "web3swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/web3swift-team/web3swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		763D16562D0CEE4F00CD6FAD /* ObjectivePGP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 763D16552D0CEE4F00CD6FAD /* XCRemoteSwiftPackageReference "ObjectivePGP" */;
+			productName = ObjectivePGP;
+		};
+		763D165A2D0CF2DB00CD6FAD /* web3swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 763D16592D0CF2DB00CD6FAD /* XCRemoteSwiftPackageReference "web3swift" */;
+			productName = web3swift;
+		};
+		76BEC1352D19BF8E0037969A /* ObjectivePGP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 763D16552D0CEE4F00CD6FAD /* XCRemoteSwiftPackageReference "ObjectivePGP" */;
+			productName = ObjectivePGP;
+		};
+		76BEC1372D19BF930037969A /* web3swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 763D16592D0CF2DB00CD6FAD /* XCRemoteSwiftPackageReference "web3swift" */;
+			productName = web3swift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 76E481EC2CF231BB00D97971 /* Project object */;
 }

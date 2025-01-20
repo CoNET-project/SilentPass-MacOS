@@ -71,10 +71,36 @@ class Socks5 {
         self.client.stop(error: nil)
     }
     
+    func UDP_ASSOCIATE () {
+        print("Local Proxy Socks5 \(client.port) UDP_ASSOCIATE")
+        switch self.rfc1928.ATYP() {
+            case .IP_V4:
+                host = self.rfc1928.IPv4()
+            case .DOMAINNAME:
+                host = self.rfc1928.domain()
+            case .IP_V6:
+                print("Local Proxy Socks5 UDP_ASSOCIATE \(client.port) got CONNECT with IPv6 STOP")
+                return self.stop_stage2_WithREQUEST_FAILED()
+            default:
+                self.stop_stage2_WithREQUEST_FAILED()
+                return print("Local Proxy Socks5 UDP_ASSOCIATE \(client.port) got CONNECT with invalid ATYP: \(String(describing: self.rfc1928.ATYP()))")
+        }
+        print ("Local Proxy Socks5 \(client.port) got UDP_ASSOCIATE \(String(describing: self.rfc1928.ATYP())) with host: \(host):\(self.rfc1928.port()) buffer length = \(self.rfc1928.dataArray.count)")
+        print (self.buffer.hexString)
+        self.client.connection.receive(minimumIncompleteLength: 1, maximumLength: self.client.MTU) {(data, _, isComplete, error) in
+            if let data = data, !data.isEmpty {
+                let header = String(data: data, encoding: .utf8) ?? data.hexString
+                print (header)
+                let body = data.base64EncodedString()
+            }
+        }
+        self.rfc1928.REP(0)
+        self.send(data: self.rfc1928.toData())
+    }
    
     
     func CONNECT() {
-        print("Local Proxy Socks5 \(client.port) got CONNECT")
+//        print("Local Proxy Socks5 \(client.port) got CONNECT")
         switch self.rfc1928.ATYP() {
             case .IP_V4:
                 host = self.rfc1928.IPv4()
@@ -93,7 +119,7 @@ class Socks5 {
         self.client.connection.receive(minimumIncompleteLength: 1, maximumLength: self.client.MTU) {(data, _, isComplete, error) in
             if let data = data, !data.isEmpty {
                 let header = String(data: data, encoding: .utf8) ?? data.hexString
-                print (header)
+//                print (header)
                 let body = data.base64EncodedString()
                 let message = self.client.layerMinus.makeSocksRequest(host: self.host, port: self.rfc1928.port(), body: body, command: "CONNECT")
                 let messageData = message.data(using: .utf8)!

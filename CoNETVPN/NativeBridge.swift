@@ -1,15 +1,20 @@
 import WebKit
-import UIKit
+
+
 class NativeBridge: NSObject, WKScriptMessageHandler {
     
     private weak var webView: WKWebView?
+    private var webViewManager: WebViewManager
     private var callbacks: [String: (Any?) -> Void] = [:]
-    
-    init(webView: WKWebView) {
+    private var ready = false
+    init(webView: WKWebView, webViewManager: WebViewManager) {
+        self.webViewManager = webViewManager
         super.init()
         self.webView = webView
-        
-       
+        webView.configuration.userContentController.add(self, name: "error")
+        webView.configuration.userContentController.add(self, name: "ready")
+        webView.configuration.userContentController.add(self, name: "startVPN")
+        webView.configuration.userContentController.add(self, name: "stopVPN")
     }
     /**
      
@@ -18,6 +23,7 @@ class NativeBridge: NSObject, WKScriptMessageHandler {
      arguments: 需要帶給javaScript函數的數據
      
      uuid:钩子名字    为什么要作为参数 因为有些固定参数的需要穿
+        *******************  uuid勾子只在NativeBridge內部管理所使用，所以無需外部提供 ***************
      completion: 調用方等待的回調函數
                     
     示例
@@ -25,42 +31,52 @@ class NativeBridge: NSObject, WKScriptMessageHandler {
      
      解释
      */
-    func callJavaScriptFunction(functionName: String, arguments: String, uuid: String, completion: @escaping (Any?) -> Void) {
-        let callID = uuid
+    func callJavaScriptFunction(functionName: String, arguments: String, completion: @escaping (Any?) -> Void) {
+        
+        let callID = UUID().uuidString
         
         // 保存回调
         callbacks[callID] = completion
-        
-        //      創建聆聽 JavaScript結束後呼叫 UUID
-//        let configuration = WKWebViewConfiguration()
-//        configuration.userContentController.add(self.webView as! WKScriptMessageHandler, name: callID)
         webView?.configuration.userContentController.add(self, name: callID)
         
-          //呼叫js
+        //呼叫js
              
         
-                let javascript = "\(functionName)('\(callID)|||| \(arguments)')"
-
-        
-                webView?.evaluateJavaScript(javascript) { (result, error) in
-                    if let error = error {
-                        print("Error evaluating JavaScript: \(error.localizedDescription)")
-                    }
-                }
+        let javascript = "fromNative('\(callID),\(functionName),\(arguments)')"
+//        print("message from JavaScript \(javascript)")
+        webView?.evaluateJavaScript(javascript, completionHandler: nil)
             
-        
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-     
+        
+        //  聆聽 JavaScript  初始化完成信號
+        if (message.name == "ready") {
+            
+            return print("初始化完成信號 ready \(message.body)")
+        }
+        
+        //      JavaScript控制台輸出
+        if (message.name == "error") {
+            return print("message from JavaScript \(message.body)")
+        }
+        
+        //      UI JavaScript console
+        if (message.name == "startVPN") {
+            return print("VPN 初始化完成 message from UI JavaScript startVPN \(message.body)")
+        }
+        
+        //      UI JavaScript console
+        if (message.name == "stopVPN") {
+            return print("message from UI JavaScript stopVPN \(message.body)")
+        }
         
         // 查找并执行对应的回调
         if let callback = callbacks[message.name] {
-            callback(message.body)
+            let data = message.body
+            callback(data)
             webView?.configuration.userContentController.removeScriptMessageHandler(forName: message.name)
-            
-            print("ios收到的回调  回调名字: \(message.name), 回调内容: \(message.body)")
-            
+            callbacks.removeValue(forKey: message.name)
         }
     }
 }

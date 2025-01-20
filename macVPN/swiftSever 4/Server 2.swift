@@ -54,7 +54,7 @@ class Server {
     }
 
     private func didAccept(nwConnection: NWConnection) {
-        let connection = ServerConnection(nwConnection: nwConnection, _layerMinus: self.layerMinus, post: self.portNumber)
+        let connection = ServerConnection(nwConnection: nwConnection, _layerMinus: self.layerMinus, port: self.portNumber)
         self.connectionsByID[connection.id] = connection
         connection.didStopCallback = { _ in
             self.connectionDidStop(connection)

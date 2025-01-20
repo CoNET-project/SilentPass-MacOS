@@ -17,8 +17,8 @@ class WebViewManager {
         // 可以添加其他配置选项，例如 JavaScript 设置等
     }
 
-    func layerMinusInit() {
-        self.layerMinus = LayerMinus()
-        self.layerMinus.start()
-    }
+//    func layerMinusInit() {
+//        self.layerMinus = LayerMinus()
+//        self.layerMinus.start()
+//    }
 }
