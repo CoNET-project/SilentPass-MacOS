@@ -1,4 +1,4 @@
-# Silent Pass VPN UI
+# Silent Pass VPN for MacOS
 
 Silent Pass combines decentralization, fragmentation, and a zero-trust architecture to deliver unparalleled internet privacy.
 
